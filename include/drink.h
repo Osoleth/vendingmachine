@@ -5,7 +5,10 @@
 class drink : public food
 {
 public:
+    drink(std::string n, double p, int m, int y, int q);
+    
     drink();
+    
     double volume;
     bool carbonated;
     void displayDetails() override;

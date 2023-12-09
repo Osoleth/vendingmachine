@@ -1,9 +1,16 @@
 #include "food.h"
 #include <iostream>
 #include <string>
-#include <vector>
 #include <vendingmachine.h>
 
+
+food::food(std::string n, double p, int m, int y, int q){           
+name = n;
+price = p;
+quantity = q;
+expiryDate.month = m;
+expiryDate.year = y;
+}
 
 food::food(){}
 
@@ -19,8 +26,9 @@ void food::set_quantity(int newQuantity){
 quantity = newQuantity;
 }
 
-void food::set_expiryDate(std::string newExpiry){
-expiryDate = newExpiry;
+void food::set_expiryDate(int m, int y){
+expiryDate.month = m;
+expiryDate.year = y;
 }
 
 void food::purchase(int quantityPurchased){
@@ -33,7 +41,9 @@ void food::purchase(int quantityPurchased){
 std::string food::get_name(){return name;}
 double food::get_price(){return price;}
 int food::get_quantity(){return quantity;}
-std::string food::get_expiryDate(){return expiryDate;}
+
+std::string food::get_expiryDate(){
+    return std::to_string(expiryDate.month) + "/" + std::to_string(expiryDate.year);}
 
 void food::displayDetails(){
   std::cout << "Item: " << get_name() << std::endl;

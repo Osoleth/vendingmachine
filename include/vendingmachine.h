@@ -7,12 +7,14 @@
 class vendingmachine
 {
 public:
+    
     vendingmachine();
-    std::vector<food*> foodList;   //a vector of all food objects called foodList    
+    
+    std::vector<food*> foodItems;
     double cashOnHand;
     double userCredit;
     
-    static void listItems();
+    void listItems();
     void addItem(food* item);
     void purchaseItem(std::string name);
     void insertMoney(double money_in);

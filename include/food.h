@@ -1,17 +1,22 @@
 #ifndef FOOD_H
 #define FOOD_H
 #include <string>
-#include <vector>
 
 class food{
-
-
 public:
-    food();
+    food(std::string n, double p, int m, int y, int q);
     std::string name;
     double price;
     int quantity;
-    std::string expiryDate;
+    
+    food();
+    
+    struct expirationdate{
+    int month;
+    int year;
+    };
+    
+    expirationdate expiryDate;
     
     std::string get_name();
     double get_price();
@@ -21,8 +26,8 @@ public:
     void set_name(std::string newName);
     void set_price(double newPrice);
     void set_quantity(int newQuantity);
-    void set_expiryDate(std::string newExpiry);
-    
+    void set_expiryDate(int m, int y);
+    void add_foodItem(food* item);
     void purchase(int quantityPurchased);
     virtual void displayDetails();
 };

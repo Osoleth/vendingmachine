@@ -1,6 +1,9 @@
 #include "snack.h"
 #include <iostream>
 
+snack::snack(std::string n, double p, int m, int y, int q){}
+snack::snack(){}
+
 void snack::displayDetails(){
   std::cout << "Item: " << get_name() << std::endl;
   std::cout << "Price: $" << get_price() << std::endl;

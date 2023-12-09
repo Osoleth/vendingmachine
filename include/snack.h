@@ -5,6 +5,7 @@
 class snack : public food
 {
 public:
+    snack(std::string n, double p, int m, int y, int q);
     snack();
     
     int calories;
